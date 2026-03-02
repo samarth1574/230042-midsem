@@ -1,0 +1,63 @@
+{
+  "studentmetadata": {
+    "name": "PhotosOnly",
+    "rollnumber": "YOUR-ROLLNUMBER",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part A",
+    "submissiondate": "2026-03-02"
+  },
+  "llmtoolsused": [
+    {
+      "toolname": "Perplexity",
+      "model": "Grok 4.1",
+      "provider": "Perplexity AI"
+    }
+  ],
+  "fullllminteractionlog": [
+    {
+      "interactionid": 1,
+      "date": "2026-03-02",
+      "toolname": "Perplexity",
+      "model": "Grok 4.1",
+      "purpose": "Paper selection criteria analysis",
+      "prompt": "Find super easy SVM/GMM/ARIMA papers 2009-2012 CORE A venues",
+      "llmresponseused": "Yes",
+      "howithelped": "Identified Kernel Methods for Deep Learning (NeurIPS 2009)",
+      "studentverification": "Verified NeurIPS=CORE A, 2009 year, kernel SVM method, MNIST public data",
+      "confidencelevel": 5
+    },
+    {
+      "interactionid": 2,
+      "date": "2026-03-02",
+      "toolname": "Perplexity",
+      "model": "Grok 4.1", 
+      "purpose": "Duplicate paper checking",
+      "prompt": "Check if Kernel Methods for Deep Learning selected in student list",
+      "llmresponseused": "Yes",
+      "howithelped": "Confirmed no student selected Cho & Saul NeurIPS 2009",
+      "studentverification": "Manually scanned 80+ entries - no matches",
+      "confidencelevel": 5
+    }
+  ],
+  "top5prompts": [
+    {
+      "rank": 1,
+      "interactionid": 1,
+      "prompt": "Find super easy SVM/GMM/ARIMA papers 2009-2012 CORE A venues",
+      "whyimportant": "Found perfect unclaimed paper meeting all reproducibility criteria"
+    },
+    {
+      "rank": 2, 
+      "interactionid": 2,
+      "prompt": "Check if Kernel Methods for Deep Learning selected in student list",
+      "whyimportant": "Ensured uniqueness before submission deadline"
+    }
+  ],
+  "studentdeclaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part A.",
+    "understandingacknowledged": true,
+    "signature": "PhotosOnly",
+    "date": "2026-03-02"
+  }
+}
