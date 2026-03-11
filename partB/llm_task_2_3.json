@@ -1,0 +1,88 @@
+{
+    "student_metadata": {
+        "name": "Samarth Shekhar",
+        "roll_number": "230042",
+        "course": "Advanced Machine Learning",
+        "exam": "Mid-Semester Examination",
+        "part": "Part B",
+        "submission_date": "2026-03-12"
+    },
+    "llm_tools_used": [
+        {
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "provider": "Google"
+        }
+    ],
+    "full_llm_interaction_log": [
+        {
+            "interaction_id": 1,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.3",
+            "purpose": "Generating the results comparison table and honest gap analysis",
+            "prompt": "For Task 2.3, report my arc-cosine kernel results alongside the paper's values (rectangles-image 22-25%, convex 17-19%, MNIST variants). Write 3-5 honest sentences explaining why our numbers differ. Include a formatted results table.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Produced a clear side-by-side comparison table and a 4-sentence analytical explanation covering dataset complexity, dimensionality, sample size, and binary-vs-multiclass task differences.",
+            "code_used_verbatim": false,
+            "student_verification": "Cross-checked all paper error rates against Figures 2-5. Confirmed the rectangles-image SVM-RBF value of 24.04% and DBN-3 value of 22.50% match Table/Figure 2.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 2,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.3",
+            "purpose": "Creating confusion matrix and bar chart visualizations",
+            "prompt": "Write Python code to: (1) generate side-by-side confusion matrices for the best arc-cosine kernel vs RBF baseline using seaborn heatmap, saved to partB/results/task_2_plot.png, and (2) a bar chart of error rates across all methods mimicking Figures 2-3 style.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Generated the visualization code with seaborn heatmaps and matplotlib bar charts, including proper formatting (annotations, color schemes, axis labels).",
+            "code_used_verbatim": true,
+            "student_modification": "Changed the color scheme from the default to Blues/Oranges for better visual contrast. Added automatic best-kernel selection instead of hardcoding. Added the bar chart as a second visualization (the LLM initially only provided the confusion matrix).",
+            "student_verification": "Ran the code, verified both plots render correctly and save to the specified paths. Confirmed confusion matrix values sum to the test set size.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 3,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.3",
+            "purpose": "Drafting the reproducibility checklist",
+            "prompt": "Write a reproducibility checklist confirming: random seeds set, dependencies in requirements.txt (CPU only), notebook runs top-to-bottom, no manual steps, hyperparameters clustered.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Provided the 5-point checklist with specific values cited (RANDOM_SEED=42, package versions, etc.).",
+            "code_used_verbatim": false,
+            "student_verification": "Verified requirements.txt exists and contains correct packages. Confirmed all notebooks include np.random.seed(42) at the top. Tested that task_2_3.ipynb runs independently.",
+            "confidence_level": 5
+        }
+    ],
+    "top_5_prompts": [
+        {
+            "rank": 1,
+            "interaction_id": 2,
+            "prompt": "Write Python code for side-by-side confusion matrices and error rate bar chart, saved to partB/results/.",
+            "why_important": "Generated the mandatory visualization that demonstrates our experimental results visually."
+        },
+        {
+            "rank": 2,
+            "interaction_id": 1,
+            "prompt": "Report results alongside the paper's values and explain why numbers differ in 3-5 sentences.",
+            "why_important": "Produced the honest gap analysis required by the guidelines — crucial for showing understanding rather than just reporting numbers."
+        },
+        {
+            "rank": 3,
+            "interaction_id": 3,
+            "prompt": "Write a reproducibility checklist for the experiment.",
+            "why_important": "Ensured compliance with the mandatory reproducibility checklist requirement."
+        }
+    ],
+    "student_declaration": {
+        "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.3 of Part B.",
+        "understanding_acknowledged": true,
+        "signature": "Samarth Shekhar",
+        "date": "2026-03-12"
+    }
+}

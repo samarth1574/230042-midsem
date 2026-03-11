@@ -1,0 +1,89 @@
+{
+    "student_metadata": {
+        "name": "Samarth Shekhar",
+        "roll_number": "230042",
+        "course": "Advanced Machine Learning",
+        "exam": "Mid-Semester Examination",
+        "part": "Part B",
+        "submission_date": "2026-03-12"
+    },
+    "llm_tools_used": [
+        {
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "provider": "Google"
+        }
+    ],
+    "full_llm_interaction_log": [
+        {
+            "interaction_id": 1,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 3.1 Component 1",
+            "purpose": "Designing the kernel degree ablation experiment",
+            "prompt": "For Task 3.1 Ablation 1: design an experiment varying arc-cosine kernel degree n=0,1,2 at fixed depth l=1. Provide markdown explaining the component's role and Python code to run the ablation and plot results as a bar chart saved to partB/results/ablation_1.png.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Structured the ablation with a clear component description linking degree to activation functions (step/ramp/quarter-pipe) and provided the experimental loop and bar chart code.",
+            "code_used_verbatim": true,
+            "student_modification": "Changed the bar colors from default matplotlib to custom hex colors for better visual distinction. Wrote the 7-sentence interpretation paragraph myself based on the actual experimental results.",
+            "student_verification": "Verified that the three degrees correspond to the correct activation functions in Figure 1 of the paper. Confirmed the experiment isolates degree from depth by fixing l=1.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 2,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 3.1 Component 2",
+            "purpose": "Designing the multilayer depth ablation experiment",
+            "prompt": "For Task 3.1 Ablation 2: design an experiment comparing depth l=1,2,3,4 with n=1 kernel at all layers. Explain the role of multilayer composition (Eqs 12-13) and provide code for the experiment and visualization saved to partB/results/ablation_2.png.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Produced the depth comparison loop and a color-coded bar chart distinguishing ablated (single-layer) from full (multilayer) configurations.",
+            "code_used_verbatim": true,
+            "student_modification": "Added the matplotlib Patch legend to clearly mark single-layer as 'ablated' vs multilayer as 'full'. Wrote the 7-sentence interpretation paragraph myself, connecting the diminishing returns observation to the paper's Figures 2-3.",
+            "student_verification": "Verified that using n=1 at all layers follows the paper's empirical recommendation in Section 2.4. Confirmed the recursive kernel computation matches Eqs 12-13.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 3,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 3.1 Component 1",
+            "purpose": "Writing the interpretation paragraph for degree ablation",
+            "prompt": "Help me draft a 5-7 sentence interpretation for the degree ablation results. The n=1 kernel performed best. Connect this to the ReLU dominance in deep learning, the magnitude-discarding property of n=0, and the dynamic range amplification of n=2.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Provided a draft interpretation connecting results to the paper's properties (Section 2.1) and broader machine learning context.",
+            "code_used_verbatim": false,
+            "student_verification": "Verified the magnitude properties: k_0(x,x)=1, k_1(x,x)=||x||^2, k_2(x,x)~||x||^4 against the paper's Section 2.1.",
+            "confidence_level": 4
+        }
+    ],
+    "top_5_prompts": [
+        {
+            "rank": 1,
+            "interaction_id": 1,
+            "prompt": "Design an ablation varying kernel degree n=0,1,2 at fixed depth with component description and bar chart code.",
+            "why_important": "Defined the first ablation experiment structure — the core deliverable of Task 3.1 Component 1."
+        },
+        {
+            "rank": 2,
+            "interaction_id": 2,
+            "prompt": "Design an ablation comparing depth l=1,2,3,4 with n=1 kernel, explaining multilayer composition's role.",
+            "why_important": "Defined the second ablation experiment — directly testing the paper's claim about depth benefits."
+        },
+        {
+            "rank": 3,
+            "interaction_id": 3,
+            "prompt": "Draft a 5-7 sentence interpretation for the degree ablation connecting to ReLU dominance and magnitude properties.",
+            "why_important": "Helped articulate the analytical interpretation connecting results to paper-specific theory."
+        }
+    ],
+    "student_declaration": {
+        "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 3.1 of Part B.",
+        "understanding_acknowledged": true,
+        "signature": "Samarth Shekhar",
+        "date": "2026-03-12"
+    }
+}

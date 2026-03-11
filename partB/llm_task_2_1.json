@@ -1,0 +1,68 @@
+{
+    "student_metadata": {
+        "name": "Samarth Shekhar",
+        "roll_number": "230042",
+        "course": "Advanced Machine Learning",
+        "exam": "Mid-Semester Examination",
+        "part": "Part B",
+        "submission_date": "2026-03-12"
+    },
+    "llm_tools_used": [
+        {
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "provider": "Google"
+        }
+    ],
+    "full_llm_interaction_log": [
+        {
+            "interaction_id": 1,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.1",
+            "purpose": "Selecting an appropriate toy dataset for testing arc-cosine kernels",
+            "prompt": "Help me choose an appropriate toy dataset from sklearn.datasets for testing arc-cosine kernels. The paper tests on grayscale image data (rectangles, convex shapes, MNIST variants). Provide code to load, preprocess (normalize to [0,1]), and split into train/val/test with stratified sampling and random seed 42.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Recommended sklearn digits dataset (8x8 handwritten digit images) as the closest match to the paper's image-based benchmarks. Provided MinMaxScaler normalization and stratified train/val/test split code.",
+            "code_used_verbatim": true,
+            "student_modification": "Changed the test/val split ratios from the suggested 0.2/0.1 to 0.3/0.15 to get a larger test set for more reliable accuracy estimates. Added the visualization code for sample images myself.",
+            "student_verification": "Verified digits dataset has 1797 samples with 64 features. Confirmed MinMaxScaler maps to [0,1]. Checked stratification preserves class ratios across splits.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 2,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.1",
+            "purpose": "Writing the dataset justification paragraph",
+            "prompt": "Write a 3-5 sentence justification for using the sklearn digits dataset to test arc-cosine kernels. Mention: what the dataset is, why it's a reasonable testbed for the paper's kernels, and what limitations it has vs the paper's MNIST variants.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Produced a clear justification connecting the dataset structure (flattened pixel vectors) to the paper's input format, while honestly acknowledging the smaller scale (64 vs 784 features, 1797 vs 12000+ samples).",
+            "code_used_verbatim": false,
+            "student_verification": "Verified feature counts and sample sizes for both our dataset and the paper's datasets. Confirmed that the paper's datasets are indeed more challenging due to background noise.",
+            "confidence_level": 5
+        }
+    ],
+    "top_5_prompts": [
+        {
+            "rank": 1,
+            "interaction_id": 1,
+            "prompt": "Help me choose a toy dataset from sklearn for testing arc-cosine kernels with preprocessing and splitting code.",
+            "why_important": "Determined the dataset used throughout all of Question 2 and Question 3 experiments."
+        },
+        {
+            "rank": 2,
+            "interaction_id": 2,
+            "prompt": "Write a 3-5 sentence justification for using sklearn digits to test arc-cosine kernels.",
+            "why_important": "Ensured the mandatory dataset justification was honest about limitations while explaining the choice."
+        }
+    ],
+    "student_declaration": {
+        "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.1 of Part B.",
+        "understanding_acknowledged": true,
+        "signature": "Samarth Shekhar",
+        "date": "2026-03-12"
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "student_metadata": {
+        "name": "Samarth Shekhar",
+        "roll_number": "230042",
+        "course": "Advanced Machine Learning",
+        "exam": "Mid-Semester Examination",
+        "part": "Part B",
+        "submission_date": "2026-03-12"
+    },
+    "llm_tools_used": [
+        {
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "provider": "Google"
+        }
+    ],
+    "full_llm_interaction_log": [
+        {
+            "interaction_id": 1,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.2",
+            "purpose": "Implementing the arc-cosine kernel functions from the paper's equations",
+            "prompt": "Implement the arc-cosine kernel (Equations 3-7, 12-13) from 'Kernel Methods for Deep Learning' so it can be used as a precomputed kernel in sklearn SVC. Need: J_0, J_1, J_2 angular functions, single-layer kernel, and multilayer recursive kernel. Include sanity checks that k_0(x,x)=1 and k_1(x,x)=||x||^2.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Generated the kernel implementation with proper vectorized NumPy operations, numerical safeguards (clipping cos_theta to [-1,1]), and zero-norm handling. The sanity checks confirmed correct implementation.",
+            "code_used_verbatim": true,
+            "student_modification": "Added the zero-norm guard (np.where(norms_outer > 0, ...)) which the initial LLM output did not include — this was needed because some digits images have all-zero pixels after normalization. Also modified the multilayer kernel to follow the paper's finding of using n=1 at layers > 1, which the LLM initially did not implement.",
+            "student_verification": "Verified k_0(x,x)=1 and k_1(x,x)=||x||^2 numerically. Hand-computed J_0(0)=pi, J_0(pi)=0, J_1(pi/2)=1 to sanity-check the angular functions. Confirmed kernel matrices are symmetric and positive semi-definite.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 2,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.2",
+            "purpose": "Setting up the SVM training pipeline with validation-based hyperparameter tuning",
+            "prompt": "Write a function that trains an SVM with a precomputed kernel, tunes C on a validation set from [0.1, 1, 10, 100], then retrains on train+val and evaluates on test. This mirrors the paper's Section 2.4 methodology.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Provided the train_and_evaluate_svm function with the correct workflow: compute kernel matrices, grid search C on validation, retrain on combined train+val, and evaluate on test.",
+            "code_used_verbatim": true,
+            "student_modification": "Changed the C grid from the LLM's suggested [0.01, 0.1, 1, 10, 100, 1000] to [0.1, 1, 10, 100] to keep computation faster on the toy dataset. Also added error rate reporting alongside accuracy to match the paper's convention.",
+            "student_verification": "Verified that the pipeline correctly retrains on train+val before test evaluation, matching the paper's stated methodology in Section 2.4.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 3,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 2.2",
+            "purpose": "Structuring the three experiments (single-layer, multilayer, mixed-degree)",
+            "prompt": "Help me structure three experiments: (1) single-layer kernels n=0,1,2, (2) multilayer n=1 at depths 1-4, (3) mixed-degree n=0 at layer 1 + n=1 at deeper layers. Also add an RBF baseline with tuned gamma.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Organized the experiments clearly with named loops and result dictionaries, and added the RBF baseline with both C and gamma tuning.",
+            "code_used_verbatim": true,
+            "student_modification": "Added the RBF gamma search over ['scale', 0.01, 0.1] which the LLM only searched over numeric values. Also changed variable names to be more descriptive (e.g., degree_names dictionary).",
+            "student_verification": "Confirmed the mixed-degree setup matches Figure 2-3 caption in the paper. Verified RBF baseline runs correctly with tuned parameters.",
+            "confidence_level": 5
+        }
+    ],
+    "top_5_prompts": [
+        {
+            "rank": 1,
+            "interaction_id": 1,
+            "prompt": "Implement the arc-cosine kernel (Equations 3-7, 12-13) for use as a precomputed kernel in sklearn SVC.",
+            "why_important": "This was the core implementation prompt — the entire reproduction depends on getting the kernel formula right."
+        },
+        {
+            "rank": 2,
+            "interaction_id": 2,
+            "prompt": "Write a function that trains SVM with precomputed kernel, tunes C on validation, retrains on combined data.",
+            "why_important": "Established the evaluation pipeline used across all three experiments and the ablation study."
+        },
+        {
+            "rank": 3,
+            "interaction_id": 3,
+            "prompt": "Structure three experiments: single-layer, multilayer, mixed-degree, plus RBF baseline.",
+            "why_important": "Organized the experimental structure that produces the results compared against the paper."
+        }
+    ],
+    "student_declaration": {
+        "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 2.2 of Part B.",
+        "understanding_acknowledged": true,
+        "signature": "Samarth Shekhar",
+        "date": "2026-03-12"
+    }
+}

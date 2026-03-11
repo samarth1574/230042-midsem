@@ -1,0 +1,67 @@
+{
+    "student_metadata": {
+        "name": "Samarth Shekhar",
+        "roll_number": "230042",
+        "course": "Advanced Machine Learning",
+        "exam": "Mid-Semester Examination",
+        "part": "Part B",
+        "submission_date": "2026-03-12"
+    },
+    "llm_tools_used": [
+        {
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "provider": "Google"
+        }
+    ],
+    "full_llm_interaction_log": [
+        {
+            "interaction_id": 1,
+            "date": "2026-03-11",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 1.1",
+            "purpose": "Understanding arc-cosine kernel derivation and structuring the 7-step method description",
+            "prompt": "We are doing Task 1.1: Core Contribution / Architecture for 'Kernel Methods for Deep Learning'. Describe the paper's method step-by-step referencing specific equations (Eq 3, 5-7, 12-13). Cover single-layer kernel, multilayer recursion, SVM path, and MKM path (kernel PCA, feature selection, LMNN). End with a summary sentence.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Provided a structured 7-step breakdown covering the arc-cosine kernel formula, recursive composition, and the two classification paths (SVM and MKM). Helped organize the explanation logically from basic angle computation to the full pipeline.",
+            "code_used_verbatim": false,
+            "student_verification": "Cross-checked every equation reference against the paper (Eqs 2-3, 5-7, 12-13). Verified the n=1 norm preservation property by checking k_1(x,x)=||x||^2 manually. Confirmed the MKM pipeline steps match Section 3.1 of the paper.",
+            "confidence_level": 5
+        },
+        {
+            "interaction_id": 2,
+            "date": "2026-03-11",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 1.1",
+            "purpose": "Refining the final summary sentence to be concise and technically accurate",
+            "prompt": "Write a concise final summary sentence for Task 1.1 that captures: (a) the problem addressed (bridging deep learning and kernel methods), (b) the core idea (arc-cosine kernels with recursive composition), and (c) why it is claimed to be better (convex optimization, no continuous hyperparameters).",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Produced a single-sentence summary that tied together the key contributions without being overly generic.",
+            "code_used_verbatim": false,
+            "student_verification": "Verified that the claimed advantages (convex optimization, no hyperparameter tuning) are explicitly stated in the paper's Section 2.1 and Section 4.",
+            "confidence_level": 5
+        }
+    ],
+    "top_5_prompts": [
+        {
+            "rank": 1,
+            "interaction_id": 1,
+            "prompt": "We are doing Task 1.1: Core Contribution / Architecture for 'Kernel Methods for Deep Learning'. Describe the paper's method step-by-step referencing specific equations.",
+            "why_important": "This was the primary prompt that generated the structured 7-step method description forming the backbone of the entire Task 1.1 response."
+        },
+        {
+            "rank": 2,
+            "interaction_id": 2,
+            "prompt": "Write a concise final summary sentence for Task 1.1 that captures the problem, core idea, and claimed advantage.",
+            "why_important": "Ensured the required summary sentence was technically accurate and concise, tying together all seven steps."
+        }
+    ],
+    "student_declaration": {
+        "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 1.1 of Part B.",
+        "understanding_acknowledged": true,
+        "signature": "Samarth Shekhar",
+        "date": "2026-03-12"
+    }
+}

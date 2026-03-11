@@ -1,0 +1,47 @@
+{
+    "student_metadata": {
+        "name": "Samarth Shekhar",
+        "roll_number": "230042",
+        "course": "Advanced Machine Learning",
+        "exam": "Mid-Semester Examination",
+        "part": "Part B",
+        "submission_date": "2026-03-12"
+    },
+    "llm_tools_used": [
+        {
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "provider": "Google"
+        }
+    ],
+    "full_llm_interaction_log": [
+        {
+            "interaction_id": 1,
+            "date": "2026-03-12",
+            "tool_name": "Gemini",
+            "model": "Gemini 2.5 Pro",
+            "task_tag": "Task 4.2",
+            "purpose": "Generating the LLM disclosure JSON files for all 10 tasks",
+            "prompt": "Create all 10 LLM disclosure JSON files (llm_task_1_1.json through llm_task_4_2.json) following the Part A structure with additional Part B fields: task_tag, code_used_verbatim (boolean), and student_modification (when code_used_verbatim=true). Include top_5_prompts and student_declaration sections.",
+            "llm_response_used": "Yes",
+            "how_it_helped": "Generated the JSON structure for all 10 disclosure files with consistent formatting, proper field names, and the required Part B extensions.",
+            "code_used_verbatim": false,
+            "student_verification": "Reviewed each JSON file to ensure: (a) task_tag matches the filename, (b) code_used_verbatim is set correctly for interaction types (true for code prompts, false for text/explanation prompts), (c) student_modification is filled whenever code_used_verbatim=true, (d) top_5_prompts reference valid interaction_ids.",
+            "confidence_level": 5
+        }
+    ],
+    "top_5_prompts": [
+        {
+            "rank": 1,
+            "interaction_id": 1,
+            "prompt": "Create all 10 LLM disclosure JSON files with Part B fields: task_tag, code_used_verbatim, student_modification.",
+            "why_important": "Single prompt that generated the structure for all disclosure files — the entire deliverable of Task 4.2."
+        }
+    ],
+    "student_declaration": {
+        "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Task 4.2 of Part B.",
+        "understanding_acknowledged": true,
+        "signature": "Samarth Shekhar",
+        "date": "2026-03-12"
+    }
+}
